@@ -160,8 +160,9 @@ body {
 }
 
 
-@media screen and (max-width: 576px) and (min-width: 300px){
+@media screen and (max-width: 576px) and (min-width: 280px){
   body {
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -173,4 +174,11 @@ body {
     max-height: 80vmin;
     font-size: 4vmin;
   }
+
+  .btn__reload {
+    font-size: 6vmin;
+    margin: 0;
+    width: 70vmin;
+}
+
 }
