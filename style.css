@@ -25,6 +25,8 @@ body {
   grid-template-rows: repeat(4, var(--cell-size));
   gap: var(--cell-gap);
   border-radius: 1vmin;
+  background-color: #222;
+  border: 2vmin solid #222;;
 }
 
 .cell {
@@ -51,7 +53,7 @@ body {
   transition: 100ms;
 }
 
-.info{
+.info {
   align-items: center;
   text-align: center;
 }
@@ -62,7 +64,7 @@ body {
   border-radius: 1vmin;
   font-family: 'Oswald', sans-serif;
   font-size: 5vmin;
-  background-color: #EDBFA7;
+  background-color: #f7e3b9;
   color: #333;
 }
 
@@ -74,7 +76,7 @@ body {
   max-height: 70vmin;
   font-family: 'Oswald', sans-serif;
   font-size: 3vmin;
-  background-color: #EDBFA7;
+  background-color: #f7e3b9;
   color: #333;
 }
 
@@ -92,12 +94,12 @@ body {
   overflow: auto;
   pointer-events: none;
   opacity: 0;
-  visibility: hidden; 
+  visibility: hidden;
   transition: 0.4s;
 }
 
 .popup__content {
-  background-color: #444;
+  background-color: #333;
   color: #fff;
   padding: 7vmin 7vmin;
   max-width: 70vmin;
@@ -118,26 +120,26 @@ body {
 }
 
 .btn__reload {
-    font-family: 'Comfortaa', sans-serif;
-    font-size: 4vmin;
-    border: 0;
-    border-radius: 2vmin;
-    width: 40vmin;
-    background: #111;
-    color: #fff;
-    margin: 2vmin;
-    padding: 1vmin;
-    cursor: pointer;
-    transition: 0.4s;
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 4vmin;
+  border: 0;
+  border-radius: 2vmin;
+  width: 40vmin;
+  background: #111;
+  color: #fff;
+  margin: 2vmin;
+  padding: 1vmin;
+  cursor: pointer;
+  transition: 0.4s;
 }
 
 .btn__reload:hover {
-    background: #fff;
-    color: #111;
+  background: #fff;
+  color: #111;
 }
 
 .btn__reload:active {
-    transform: scale(0.8);
+  transform: scale(0.8);
 }
 
 @keyframes show {
@@ -151,34 +153,35 @@ body {
   from {
     transform: scale(.85);
   }
+
   50% {
     transform: scale(1);
   }
+
   to {
     transform: scale(.85);
   }
 }
 
 
-@media screen and (max-width: 576px){
+@media screen and (max-width: 576px) {
   body {
     overflow: hidden;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
   }
-  
+
   .dicription {
     border-radius: 1vmin;
     max-width: 70vmin;
     max-height: 80vmin;
-    font-size: 1vmin;
+    font-size: 5vmin;
   }
 
   .btn__reload {
     font-size: 6vmin;
     margin: 0;
     width: 70vmin;
-}
-
+  }
 }
