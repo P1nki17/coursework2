@@ -127,7 +127,7 @@ body {
 
 .popup__content {
   background-color: #F6E6DA;
-  background-image: linear-gradient(rgb(246, 230, 218, .5), rgba(0, 0, 0, .6)), url('./images/2048.png');
+  background-image: linear-gradient(rgb(246, 230, 218, .4), rgba(246, 230, 218, .4)), url('./images/2048.png');
   background-size: 100%;
   background-position: left;
   color: #130F0D;
