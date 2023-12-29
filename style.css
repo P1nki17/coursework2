@@ -61,13 +61,14 @@ body {
   padding: 1vmin 1vmin;
   border-radius: 1vmin;
   font-family: 'Oswald', sans-serif;
-  font-size: 4vmin;
+  font-size: 5vmin;
   background-color: #EDBFA7;
   color: #333;
 }
 
 .dicription {
   margin: 20px 20px;
+  padding: 1vmin;
   border-radius: 1vmin;
   max-width: 40vmin;
   max-height: 70vmin;
@@ -76,7 +77,6 @@ body {
   background-color: #EDBFA7;
   color: #333;
 }
-
 
 .popup {
   display: flex;
@@ -117,13 +117,12 @@ body {
   visibility: visible;
 }
 
-
 .btn__reload {
     font-family: 'Comfortaa', sans-serif;
     font-size: 4vmin;
     border: 0;
     border-radius: 2vmin;
-    width: 60%;
+    width: 40vmin;
     background: #111;
     color: #fff;
     margin: 2vmin;
@@ -157,5 +156,21 @@ body {
   }
   to {
     transform: scale(.85);
+  }
+}
+
+
+@media screen and (max-width: 576px) and (min-width: 300px){
+  body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  
+  .dicription {
+    border-radius: 1vmin;
+    max-width: 70vmin;
+    max-height: 80vmin;
+    font-size: 4vmin;
   }
 }
