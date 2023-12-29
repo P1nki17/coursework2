@@ -83,7 +83,7 @@ body {
   margin: 2vmin;
   padding: 1vmin;
   cursor: pointer;
-  transition: .4s;
+  transition: .6s;
 }
 
 .btn__reload:hover {
@@ -122,7 +122,7 @@ body {
   pointer-events: none;
   opacity: 0;
   visibility: hidden;
-  transition: .4s;
+  transition: 1s;
 }
 
 .popup__content {
@@ -160,7 +160,7 @@ body {
   margin: 2vmin;
   padding: 1vmin;
   cursor: pointer;
-  transition: .4s;
+  transition: .6s;
 }
 
 .btn__reload-popup:hover {
