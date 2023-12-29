@@ -1,5 +1,4 @@
-//Чувствительность — количество пикселей, после которого жест будет считаться свайпом
-const sensitivity = 20;
+export class Swipe {
 
 var touchStart = null; //Точка начала касания
 var touchPosition = null; //Текущая позиция
@@ -23,14 +22,15 @@ function TouchEnd(e) {
     touchPosition = null;
 }
 
-function CheckAction() {
+async function CheckAction() {
+
+    const sensitivity = 20;//Чувствительность — количество пикселей, после которого жест будет считаться свайпом
+
     var d = //Получаем расстояния от начальной до конечной точек по обеим осям
     {
         x: touchStart.x - touchPosition.x,
         y: touchStart.y - touchPosition.y
     };
-
-    var msg = ""; //Сообщение
 
     if (Math.abs(d.x) > Math.abs(d.y)) //Проверяем, движение по какой оси было длиннее
     {
@@ -38,12 +38,22 @@ function CheckAction() {
         {
             if (d.x > 0) //Если значение больше нуля, значит пользователь двигал пальцем справа налево
             {
-              moveLeft();
+                if (!canMoveLeft()) {
+                    setupInputOnce();
+                    return;
+                }
+                await moveLeft();
             }
-            else //Иначе он двигал им слева направо
+            else  //Иначе он двигал им слева направо
             {
-              moveRight();
+                if (!canMoveRight()) {
+                    setupInputOnce();
+                    return;
+                }
+                await moveRight();
             }
+            const newTile = new Tile(gameBoard);
+            grid.getRandomEmptyCell().linkTile(newTile);
         }
     }
     else //Аналогичные проверки для вертикальной оси
@@ -51,12 +61,25 @@ function CheckAction() {
         if (Math.abs(d.y) > sensitivity) {
             if (d.y > 0) //Свайп вверх
             {
-              moveUp();
+                if (!canMoveUp()) {
+                    setupInputOnce();
+                    return;
+                }
+                await moveUp();
             }
             else //Свайп вниз
             {
-              moveDown();
+                if (!canMoveDown()) {
+                    setupInputOnce();
+                    return;
+                }
+                await moveDown();
             }
+            const newTile = new Tile(gameBoard);
+            grid.getRandomEmptyCell().linkTile(newTile);
         }
     }
+
+}
+
 }

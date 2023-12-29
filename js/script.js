@@ -18,51 +18,39 @@ const reload = () => {
 
 function setupInputOnce() {
   window.addEventListener("keydown", handleInput, { once: true });
-  window.addEventListener("touchstart", function (e) { TouchStart(e); }); //Начало касания
-  window.addEventListener("touchmove", function (e) { TouchMove(e); }); //Движение пальцем по экрану
-  window.addEventListener("touchend", function (e) { TouchEnd(e); });//Пользователь отпустил экран
+  window.addEventListener("touchstart", function (e) { TouchStart(e); }); 
+  window.addEventListener("touchmove", function (e) { TouchMove(e); }); 
+  window.addEventListener("touchend", function (e) { TouchEnd(e); });
 }
 
 async function handleInput(event) {
-  switch (event.key) {
-    case "ArrowUp":
-    case "w":
-    case "W":
-    case "ц":
-    case "Ц":
+  switch (event.keyCode) {
+    case 38:
+    case 87:
       if (!canMoveUp()) {
         setupInputOnce();
         return;
       }
       await moveUp();
       break;
-    case "ArrowDown":
-    case "s":
-    case "S":
-    case "ы":
-    case "Ы":
+    case 40:
+    case 83:
       if (!canMoveDown()) {
         setupInputOnce();
-        return;
+        return;wd
       }
       await moveDown();
       break;
-    case "ArrowLeft":
-    case "a":
-    case "A":
-    case "ф":
-    case "Ф":
+    case 37:
+    case 65:
       if (!canMoveLeft()) {
         setupInputOnce();
         return;
       }
       await moveLeft();
       break;
-    case "ArrowRight":
-    case "d":
-    case "D":
-    case "в":
-    case "В":
+    case 39:
+    case 68:
       if (!canMoveRight()) {
         setupInputOnce();
         return;
@@ -180,43 +168,41 @@ function canMoveInGroup(group) {
   });
 }
 
-var touchStart = null; //Точка начала касания
-var touchPosition = null; //Текущая позиция
+var touchStart = null; 
+var touchPosition = null; 
 
 function TouchStart(e) {
-    //Получаем текущую позицию касания
+    
     touchStart = { x: e.changedTouches[0].clientX, y: e.changedTouches[0].clientY };
     touchPosition = { x: touchStart.x, y: touchStart.y };
 }
 
 function TouchMove(e) {
-    //Получаем новую позицию
+    
     touchPosition = { x: e.changedTouches[0].clientX, y: e.changedTouches[0].clientY };
 }
 
 function TouchEnd(e) {
-    CheckAction(); //Определяем, какой жест совершил пользователь
-
-    //Очищаем позиции
+    CheckAction();
     touchStart = null;
     touchPosition = null;
 }
 
 async function CheckAction() {
 
-    const sensitivity = 20;//Чувствительность — количество пикселей, после которого жест будет считаться свайпом
+    const sensitivity = 20;
 
-    var d = //Получаем расстояния от начальной до конечной точек по обеим осям
+    var d = 
     {
         x: touchStart.x - touchPosition.x,
         y: touchStart.y - touchPosition.y
     };
 
-    if (Math.abs(d.x) > Math.abs(d.y)) //Проверяем, движение по какой оси было длиннее
+    if (Math.abs(d.x) > Math.abs(d.y)) 
     {
-        if (Math.abs(d.x) > sensitivity) //Проверяем, было ли движение достаточно длинным
+        if (Math.abs(d.x) > sensitivity) 
         {
-            if (d.x > 0) //Если значение больше нуля, значит пользователь двигал пальцем справа налево
+            if (d.x > 0) 
             {
               if (!canMoveLeft()) {
                 setupInputOnce();
@@ -224,7 +210,7 @@ async function CheckAction() {
               }
               await moveLeft();
             }
-            else  //Иначе он двигал им слева направо
+            else  
             {
               if (!canMoveRight()) {
                 setupInputOnce();
@@ -234,12 +220,19 @@ async function CheckAction() {
             }
             const newTile = new Tile(gameBoard);
             grid.getRandomEmptyCell().linkTile(newTile);
+
+            if (!canMoveUp() && !canMoveDown() && !canMoveLeft() && !canMoveRight()) {
+              await newTile.waitForAnimationEnd()
+              popup.classList.add("is-active");
+              reloadBtn.addEventListener("click", reload);
+              return;
+            }
         }
     }
-    else //Аналогичные проверки для вертикальной оси
+    else 
     {
         if (Math.abs(d.y) > sensitivity) {
-            if (d.y > 0) //Свайп вверх
+            if (d.y > 0) 
             {
               if (!canMoveUp()) {
                 setupInputOnce();
@@ -247,7 +240,7 @@ async function CheckAction() {
               }
               await moveUp();
             }
-            else //Свайп вниз
+            else 
             {
               if (!canMoveDown()) {
                 setupInputOnce();
@@ -256,8 +249,15 @@ async function CheckAction() {
               await moveDown();
             }
             const newTile = new Tile(gameBoard);
-            grid.getRandomEmptyCell().linkTile(newTile);  
+            grid.getRandomEmptyCell().linkTile(newTile); 
+            
+            if (!canMoveUp() && !canMoveDown() && !canMoveLeft() && !canMoveRight()) {
+              await newTile.waitForAnimationEnd()
+              popup.classList.add("is-active");
+              reloadBtn.addEventListener("click", reload);
+              return;
+            }
         }
     }
-
+    
 }
