@@ -214,6 +214,11 @@ body {
     transition: .4s;
   }
 
+  .btn__fullscreen.is-active  {
+    background-image: url('./images/NFS.png');
+    background-size: 100%;
+  }
+  
   .btn__fullscreen:active {
     transform: scale(.8);
   }
