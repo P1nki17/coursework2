@@ -200,6 +200,59 @@ body {
   }
 }
 
+@media screen and (max-width: 1400px) {
+  .btn__fullscreen {
+    visibility: visible;
+    margin: 0 2vmin 60vmin 0;
+    border: 0;
+    border-radius: 2vmin;
+    width: 10vmin;
+    height: 10vmin;
+    background-color: #F6E6DA;
+    background-image: url('./images/FS.png');
+    background-size: 100%;
+    transition: .4s;
+  }
+    .btn__fullscreen.is-active  {
+    background-image: url('./images/NFS.png');
+    background-size: 100%;
+  }
+  
+  .btn__fullscreen:active {
+    transform: scale(.8);
+  }
+
+  .info__inner {
+    margin: 2vmin;
+    font-size: 6vmin;
+  }
+
+  .dicription {
+    margin: 2vmin;
+    border-radius: 1vmin;
+    max-width: 70vmin;
+    max-height: 80vmin;
+    font-size: 4vmin;
+  }
+
+  .btn__reload {
+    font-size: 6vmin;
+    margin: 0;
+    width: 70vmin;
+  }
+  .popup__content {
+    padding: 8vmin 0;
+    width: 100%;
+    font-size: 4vmin;
+  }
+
+  .btn__reload-popup {
+    font-size: 6vmin;
+    width: 48vmin;
+  }
+
+}
+
 @media screen and (max-width: 576px) {
   body {
     overflow: hidden;
