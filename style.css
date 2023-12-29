@@ -83,6 +83,15 @@ body {
   transition: 0.4s;
 }
 
+.btn__reload:hover {
+  background: #fff;
+  color: #111;
+}
+
+.btn__reload:active {
+  transform: scale(0.8);
+}
+
 .dicription {
   margin: 20px 20px;
   padding: 1vmin;
@@ -148,12 +157,12 @@ body {
   transition: 0.4s;
 }
 
-.btn__reload:hover {
+.btn__reload-popup:hover {
   background: #fff;
   color: #111;
 }
 
-.btn__reload:active {
+.btn__reload-popup:active {
   transform: scale(0.8);
 }
 

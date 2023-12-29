@@ -5,7 +5,7 @@ document.querySelector('.record').textContent = localStorage.getItem('record');
 const gameBoard = document.getElementById("game-board");
 
 const popup = document.querySelector(".popup");
-const reloadBtn = document.querySelector(".btn__reload");
+const reloadBtn = document.querySelector(".btn__reload-popup");
 
 const grid = new Grid(gameBoard);
 grid.getRandomEmptyCell().linkTile(new Tile(gameBoard));
