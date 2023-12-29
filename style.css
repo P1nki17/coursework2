@@ -64,8 +64,8 @@ body {
   border-radius: 1vmin;
   font-family: 'Oswald', sans-serif;
   font-size: 5vmin;
-  background-color: #f7e3b9;
-  color: #333;
+  background-color: #F6E6DA;
+  color: #201713;
 }
 
 .dicription {
@@ -76,8 +76,8 @@ body {
   max-height: 70vmin;
   font-family: 'Oswald', sans-serif;
   font-size: 3vmin;
-  background-color: #f7e3b9;
-  color: #333;
+  background-color: #F6E6DA;
+  color: #201713;
 }
 
 .popup {
