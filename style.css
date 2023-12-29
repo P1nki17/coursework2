@@ -200,7 +200,7 @@ body {
   }
 }
 
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1200px){
   .btn__fullscreen {
     visibility: visible;
     margin: 0 2vmin 60vmin 0;
