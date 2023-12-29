@@ -1,6 +1,6 @@
 import { Grid } from "./grid.js";
 import { Tile } from "./tile.js";
-
+document.querySelector('.record').textContent = localStorage.getItem('test');
 const gameBoard = document.getElementById("game-board");
 
 const popup = document.querySelector(".popup");

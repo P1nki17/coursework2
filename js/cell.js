@@ -46,10 +46,8 @@ export class Cell {
       score = this.linkedTile.value + score;
       document.querySelector('.score').textContent = score;
       localStorage.setItem('test', score);
-      document.querySelector('.record').textContent = localStorage.getItem('test');
       this.linkedTileForMerge.removeFromDOM();
       this.unlinkTileForMerge();
-      console.log(score);
     }
 
   }
