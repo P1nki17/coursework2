@@ -190,7 +190,7 @@ function TouchEnd(e) {
 
 async function CheckAction() {
 
-  const sensitivity = 20;
+  const sensitivity = 10;
 
   var d =
   {
