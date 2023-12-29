@@ -18,8 +18,8 @@ const reload = () => {
 
 function setupInputOnce() {
   window.addEventListener("keydown", handleInput, { once: true });
-  window.addEventListener("touchstart", function (e) { TouchStart(e); }); 
-  window.addEventListener("touchmove", function (e) { TouchMove(e); }); 
+  window.addEventListener("touchstart", function (e) { TouchStart(e); });
+  window.addEventListener("touchmove", function (e) { TouchMove(e); });
   window.addEventListener("touchend", function (e) { TouchEnd(e); });
 }
 
@@ -37,7 +37,7 @@ async function handleInput(event) {
     case 83:
       if (!canMoveDown()) {
         setupInputOnce();
-        return;wd
+        return;
       }
       await moveDown();
       break;
@@ -168,96 +168,89 @@ function canMoveInGroup(group) {
   });
 }
 
-var touchStart = null; 
-var touchPosition = null; 
+var touchStart = null;
+var touchPosition = null;
 
 function TouchStart(e) {
-    
-    touchStart = { x: e.changedTouches[0].clientX, y: e.changedTouches[0].clientY };
-    touchPosition = { x: touchStart.x, y: touchStart.y };
+
+  touchStart = { x: e.changedTouches[0].clientX, y: e.changedTouches[0].clientY };
+  touchPosition = { x: touchStart.x, y: touchStart.y };
 }
 
 function TouchMove(e) {
-    
-    touchPosition = { x: e.changedTouches[0].clientX, y: e.changedTouches[0].clientY };
+
+  touchPosition = { x: e.changedTouches[0].clientX, y: e.changedTouches[0].clientY };
 }
 
 function TouchEnd(e) {
-    CheckAction();
-    touchStart = null;
-    touchPosition = null;
+  CheckAction();
+  touchStart = null;
+  touchPosition = null;
 }
 
 async function CheckAction() {
 
-    const sensitivity = 20;
+  const sensitivity = 20;
 
-    var d = 
-    {
-        x: touchStart.x - touchPosition.x,
-        y: touchStart.y - touchPosition.y
-    };
+  var d =
+  {
+    x: touchStart.x - touchPosition.x,
+    y: touchStart.y - touchPosition.y
+  };
 
-    if (Math.abs(d.x) > Math.abs(d.y)) 
-    {
-        if (Math.abs(d.x) > sensitivity) 
-        {
-            if (d.x > 0) 
-            {
-              if (!canMoveLeft()) {
-                setupInputOnce();
-                return;
-              }
-              await moveLeft();
-            }
-            else  
-            {
-              if (!canMoveRight()) {
-                setupInputOnce();
-                return;
-              }
-              await moveRight();
-            }
-            const newTile = new Tile(gameBoard);
-            grid.getRandomEmptyCell().linkTile(newTile);
-
-            if (!canMoveUp() && !canMoveDown() && !canMoveLeft() && !canMoveRight()) {
-              await newTile.waitForAnimationEnd()
-              popup.classList.add("is-active");
-              reloadBtn.addEventListener("click", reload);
-              return;
-            }
+  if (Math.abs(d.x) > Math.abs(d.y)) {
+    if (Math.abs(d.x) > sensitivity) {
+      if (d.x > 0) {
+        if (!canMoveLeft()) {
+          setupInputOnce();
+          return;
         }
-    }
-    else 
-    {
-        if (Math.abs(d.y) > sensitivity) {
-            if (d.y > 0) 
-            {
-              if (!canMoveUp()) {
-                setupInputOnce();
-                return;
-              }
-              await moveUp();
-            }
-            else 
-            {
-              if (!canMoveDown()) {
-                setupInputOnce();
-                return;
-              }
-              await moveDown();
-            }
-            const newTile = new Tile(gameBoard);
-            grid.getRandomEmptyCell().linkTile(newTile); 
-            
-            if (!canMoveUp() && !canMoveDown() && !canMoveLeft() && !canMoveRight()) {
-              await newTile.waitForAnimationEnd()
-              popup.classList.add("is-active");
-              reloadBtn.addEventListener("click", reload);
-              return;
-            }
+        await moveLeft();
+      }
+      else {
+        if (!canMoveRight()) {
+          setupInputOnce();
+          return;
         }
+        await moveRight();
+      }
+      const newTile = new Tile(gameBoard);
+      grid.getRandomEmptyCell().linkTile(newTile);
+
+      if (!canMoveUp() && !canMoveDown() && !canMoveLeft() && !canMoveRight()) {
+        await newTile.waitForAnimationEnd()
+        popup.classList.add("is-active");
+        reloadBtn.addEventListener("click", reload);
+        return;
+      }
     }
-    
+  }
+  else {
+    if (Math.abs(d.y) > sensitivity) {
+      if (d.y > 0) {
+        if (!canMoveUp()) {
+          setupInputOnce();
+          return;
+        }
+        await moveUp();
+      }
+      else {
+        if (!canMoveDown()) {
+          setupInputOnce();
+          return;
+        }
+        await moveDown();
+      }
+      const newTile = new Tile(gameBoard);
+      grid.getRandomEmptyCell().linkTile(newTile);
+
+      if (!canMoveUp() && !canMoveDown() && !canMoveLeft() && !canMoveRight()) {
+        await newTile.waitForAnimationEnd()
+        popup.classList.add("is-active");
+        reloadBtn.addEventListener("click", reload);
+        return;
+      }
+    }
+  }
+
 }
