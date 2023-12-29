@@ -6,6 +6,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select:none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
 body {
@@ -122,6 +127,7 @@ body {
   pointer-events: none;
   opacity: 0;
   visibility: hidden;
+  z-index: -1;
   transition: 1s;
 }
 
@@ -147,6 +153,7 @@ body {
   pointer-events: auto;
   opacity: 1;
   visibility: visible;
+  z-index: 1000;
 }
 
 .btn__reload-popup {
