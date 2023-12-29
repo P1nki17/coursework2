@@ -78,12 +78,12 @@ body {
   border: 0;
   border-radius: 2vmin;
   width: 40vmin;
-  background: #111;
+  background: #5c4337;
   color: #fff;
   margin: 2vmin;
   padding: 1vmin;
   cursor: pointer;
-  transition: 0.4s;
+  transition: .4s;
 }
 
 .btn__reload:hover {
@@ -92,7 +92,7 @@ body {
 }
 
 .btn__reload:active {
-  transform: scale(0.8);
+  transform: scale(.8);
 }
 
 .dicription {
@@ -115,19 +115,22 @@ body {
   font-size: 3vmin;
   position: fixed;
   z-index: 15;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, .9);
   width: 100%;
   height: 100%;
   overflow: auto;
   pointer-events: none;
   opacity: 0;
   visibility: hidden;
-  transition: 0.4s;
+  transition: .4s;
 }
 
 .popup__content {
-  background-color: #333;
-  color: #fff;
+  background-color: #F6E6DA;
+  background-image: linear-gradient(rgb(246, 230, 218, .5), rgba(0, 0, 0, .6)), url('./images/2048.png');
+  background-size: 100%;
+  background-position: left;
+  color: #130F0D;
   padding: 7vmin 7vmin;
   max-width: 70vmin;
   max-height: 70vmin;
@@ -136,7 +139,7 @@ body {
 }
 
 .popup__title {
-  transform: scale(.85);
+  transform: scale(.9);
   animation: pulse 2s ease-in-out infinite;
 }
 
@@ -152,12 +155,12 @@ body {
   border: 0;
   border-radius: 2vmin;
   width: 40vmin;
-  background: #111;
+  background: #5c4337;
   color: #fff;
   margin: 2vmin;
   padding: 1vmin;
   cursor: pointer;
-  transition: 0.4s;
+  transition: .4s;
 }
 
 .btn__reload-popup:hover {
@@ -166,19 +169,19 @@ body {
 }
 
 .btn__reload-popup:active {
-  transform: scale(0.8);
+  transform: scale(.8);
 }
 
 @keyframes show {
   0% {
-    opacity: 0.5;
+    opacity: .5;
     transform: scale(0);
   }
 }
 
 @keyframes pulse {
   from {
-    transform: scale(.85);
+    transform: scale(.9);
   }
 
   50% {
@@ -186,7 +189,7 @@ body {
   }
 
   to {
-    transform: scale(.85);
+    transform: scale(.9);
   }
 }
 
@@ -208,11 +211,11 @@ body {
     background-color: #F6E6DA;
     background-image: url('./images/FS.png');
     background-size: 100%;
-    transition: 0.4s;
+    transition: .4s;
   }
 
   .btn__fullscreen:active {
-    transform: scale(0.8);
+    transform: scale(.8);
   }
 
   .info__inner {
