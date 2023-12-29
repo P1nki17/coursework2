@@ -68,21 +68,19 @@ body {
 }
 
 .info__inner {
-  margin: 20px 20px;
+  margin: 2vmin;
   padding: 1vmin 1vmin;
   border-radius: 1vmin;
   font-family: 'Oswald', sans-serif;
-  font-size: 5vmin;
+  font-size: 6vmin;
   background-color: #F6E6DA;
   color: #201713;
 }
 
 .btn__reload {
   font-family: 'Comfortaa', sans-serif;
-  font-size: 4vmin;
   border: 0;
   border-radius: 2vmin;
-  width: 40vmin;
   background: #5c4337;
   color: #fff;
   margin: 2vmin;
@@ -137,11 +135,13 @@ body {
   background-size: 100%;
   background-position: left;
   color: #130F0D;
-  padding: 7vmin 7vmin;
   max-width: 70vmin;
   max-height: 70vmin;
+  padding: 8vmin 0;
   margin: 0 auto;
   border-radius: 4vmin;
+  font-size: 4vmin;
+  width: 100%;
 }
 
 .popup__title {
@@ -158,16 +158,16 @@ body {
 
 .btn__reload-popup {
   font-family: 'Comfortaa', sans-serif;
-  font-size: 4vmin;
   border: 0;
   border-radius: 2vmin;
-  width: 40vmin;
   background: #5c4337;
   color: #fff;
   margin: 2vmin;
   padding: 1vmin;
   cursor: pointer;
   transition: .6s;
+  font-size: 6vmin;
+  width: 48vmin;
 }
 
 .btn__reload-popup:hover {
@@ -222,11 +222,6 @@ body {
     transform: scale(.8);
   }
 
-  .info__inner {
-    margin: 2vmin;
-    font-size: 6vmin;
-  }
-
   .dicription {
     margin: 2vmin;
     border-radius: 1vmin;
@@ -239,16 +234,6 @@ body {
     font-size: 6vmin;
     margin: 0;
     width: 70vmin;
-  }
-  .popup__content {
-    padding: 8vmin 0;
-    width: 100%;
-    font-size: 4vmin;
-  }
-
-  .btn__reload-popup {
-    font-size: 6vmin;
-    width: 48vmin;
   }
 
 }
@@ -283,11 +268,6 @@ body {
     transform: scale(.8);
   }
 
-  .info__inner {
-    margin: 2vmin;
-    font-size: 6vmin;
-  }
-
   .dicription {
     margin: 2vmin;
     border-radius: 1vmin;
@@ -296,19 +276,4 @@ body {
     font-size: 4vmin;
   }
 
-  .btn__reload {
-    font-size: 6vmin;
-    margin: 0;
-    width: 70vmin;
-  }
-  .popup__content {
-    padding: 8vmin 0;
-    width: 100%;
-    font-size: 4vmin;
-  }
-
-  .btn__reload-popup {
-    font-size: 6vmin;
-    width: 48vmin;
-  }
 }
