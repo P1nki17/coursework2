@@ -160,7 +160,7 @@ body {
 }
 
 
-@media screen and (max-width: 576px) and (min-width: 280px){
+@media screen and (max-width: 576px){
   body {
     overflow: hidden;
     display: flex;
