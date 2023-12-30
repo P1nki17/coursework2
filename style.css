@@ -21,10 +21,6 @@ body {
   height: 100vh;
 }
 
-.btn__fullscreen {
-  visibility: hidden;
-}
-
 #game-board {
   --cell-size: 16vmin;
   --cell-gap: 2vmin;
@@ -156,6 +152,9 @@ body {
   z-index: 1000;
 }
 
+.btn__fullscreen:active {
+  transform: scale(.9);
+}
 .btn__fullscreen:hover {
   transform: scale(.9);
   background-image: url('./images/NFS.png');
