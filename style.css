@@ -156,6 +156,22 @@ body {
   z-index: 1000;
 }
 
+.btn__fullscreen:hover {
+  transform: scale(.9);
+  background-image: url('./images/NFS.png');
+}
+
+.btn__fullscreen.is-active {
+  background-image: url('./images/NFS.png');
+  background-size: 100%;
+}
+
+.btn__fullscreen.is-active:hover {
+  background-image: url('./images/FS.png');
+  background-size: 100%;
+  transform: scale(1.1);
+}
+
 .btn__reload-popup {
   font-family: 'Comfortaa', sans-serif;
   border: 0;
@@ -214,15 +230,6 @@ body {
     transition: .4s;
   }
 
-  .btn__fullscreen.is-active {
-    background-image: url('./images/NFS.png');
-    background-size: 100%;
-  }
-
-  .btn__fullscreen:active {
-    transform: scale(.8);
-  }
-
   .dicription {
     margin: 2vmin;
     border-radius: 1vmin;
@@ -258,15 +265,6 @@ body {
     background-image: url('./images/FS.png');
     background-size: 100%;
     transition: .4s;
-  }
-
-  .btn__fullscreen.is-active {
-    background-image: url('./images/NFS.png');
-    background-size: 100%;
-  }
-
-  .btn__fullscreen:active {
-    transform: scale(.8);
   }
 
   .btn__reload {
