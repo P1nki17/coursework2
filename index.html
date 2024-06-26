@@ -18,7 +18,15 @@
 </head>
 
 <body>
-    <button data-toggle-fullscreen class="btn__fullscreen"></button>
+    <div class="button-place">
+        <button data-toggle-fullscreen class="btn__fullscreen"></button>
+        <br>
+        <form action="http://r99960eb.beget.tech/">
+            <button class="btn__back"></button>
+        </form>
+
+
+    </div>
     <div id="game-board"></div>
     <div class="popup">
         <div class="popup__content">
@@ -34,7 +42,8 @@
             <span class="record">0</span>
         </div>
         <button class="btn__reload" onclick="parent.location.reload(); return false;">Новая Игра</button>
-        <div class="dicription">КАК ИГРАТЬ: Используйте клавиши со стрелками или свайпы, чтобы перемещать плитки. Плитки с
+        <div class="dicription">КАК ИГРАТЬ: Используйте клавиши со стрелками или свайпы, чтобы перемещать плитки. Плитки
+            с
             одинаковыми номерами сливаются в одну,
             когда они соприкасаются. Сложите их, чтобы получить 2048!</div>
     </div>

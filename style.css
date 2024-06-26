@@ -171,6 +171,14 @@ body {
   transform: scale(1.1);
 }
 
+.btn__back:active {
+  transform: scale(.9);
+}
+.btn__back:hover {
+  transform: scale(.9);
+  background-image: url('./images/NBack.png');
+}
+
 .btn__reload-popup {
   font-family: 'Comfortaa', sans-serif;
   border: 0;
@@ -216,15 +224,34 @@ body {
 }
 
 @media screen and (orientation: landscape) {
+
+  .button-place{
+    padding: 10px;
+    margin: 0 2vmin 48vmin 0;
+  }
+
   .btn__fullscreen {
     visibility: visible;
-    margin: 0 2vmin 60vmin 0;
     border: 0;
     border-radius: 2vmin;
     width: 10vmin;
     height: 10vmin;
+    margin-bottom: 20px;
     background-color: #F6E6DA;
     background-image: url('./images/FS.png');
+    background-size: 100%;
+    transition: .4s;
+  }
+
+  .btn__back {
+    visibility: visible;
+    border: 0;
+    border-radius: 2vmin;
+    width: 10vmin;
+    height: 10vmin;
+    margin-bottom: 20px;
+    background-color: #F6E6DA;
+    background-image: url('./images/back.png');
     background-size: 100%;
     transition: .4s;
   }
@@ -255,7 +282,6 @@ body {
 
   .btn__fullscreen {
     visibility: visible;
-    margin: 0 0 2vmin 60vmin;
     border: 0;
     border-radius: 2vmin;
     width: 10vmin;
