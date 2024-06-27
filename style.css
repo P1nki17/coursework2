@@ -279,6 +279,23 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
   }
+  .button-place{
+    width: 72vmin;
+    margin-bottom: 1vmin;
+    display: flex;
+    flex-direction:row;
+  }
+  .btn__back {
+    visibility: visible;
+    border: 0;
+    border-radius: 2vmin;
+    width: 10vmin;
+    height: 10vmin;
+    background-color: #F6E6DA;
+    background-image: url('./images/back.png');
+    background-size: 100%;
+    transition: .4s;
+  }
 
   .btn__fullscreen {
     visibility: visible;
@@ -290,6 +307,7 @@ body {
     background-image: url('./images/FS.png');
     background-size: 100%;
     transition: .4s;
+    margin-right: 2vmin;
   }
 
   .btn__reload {
